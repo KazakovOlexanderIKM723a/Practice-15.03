@@ -1,28 +1,22 @@
-﻿#include <iostream>
+#include <iostream>
 using std::cout;
 using std::endl;
 
 int main() {
-    int array[] = { 513, 31, 72, 11, 9, 25, 98, 20, 44 };
-    int target = 9; 
+    const int size = 6; 
+    int array[size] = { 52, 33, 712, 14, 98, 24 }; 
 
-    int size = sizeof(array) / sizeof(array[0]);
+    int sum = 0; 
 
-    bool found = false;
 
     for (int i = 0; i < size; ++i) {
-        if (array[i] == target) {
-            found = true;
-            break;
-        }
+        sum += array[i];
     }
 
-    if (found) {
-        std::cout << "Element " << target << " contained in the array." << std::endl;
-    }
-    else {
-        std::cout << "Element " << target << " not contained in an array." << std::endl;
-    }
+
+    double average = sum / (double)size;
+
+    cout << "The average value of the elements: " << average << endl;
 
     return 0;
 }
